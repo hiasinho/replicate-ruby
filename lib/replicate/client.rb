@@ -7,6 +7,7 @@ require "replicate/client/model"
 require "replicate/client/prediction"
 require "replicate/client/upload"
 require "replicate/client/training"
+require "replicate/client/dreambooth_training"
 
 module Replicate
   class Client
@@ -16,6 +17,7 @@ module Replicate
     include Replicate::Client::Prediction
     include Replicate::Client::Upload
     include Replicate::Client::Training
+    include Replicate::Client::DreamboothTraining
 
     def initialize(options = {})
       # Use options passed in, but fall back to module defaults
@@ -27,10 +29,6 @@ module Replicate
 
     def api_endpoint
       @api_endpoint ||= Replicate::Endpoint.new(endpoint_url: api_endpoint_url, api_token: api_token)
-    end
-
-    def dreambooth_endpoint
-      @dreambooth_endpoint ||= Replicate::Endpoint.new(endpoint_url: dreambooth_endpoint_url, api_token: api_token)
     end
   end
 end
