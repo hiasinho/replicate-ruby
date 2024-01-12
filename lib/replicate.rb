@@ -9,6 +9,7 @@ require "replicate/record/model_version"
 require "replicate/record/prediction"
 require "replicate/record/upload"
 require "replicate/record/training"
+require "replicate/record/dreambooth_training"
 
 module Replicate
   class Error < StandardError; end
