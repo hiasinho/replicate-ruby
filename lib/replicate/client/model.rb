@@ -26,6 +26,10 @@ module Replicate
       def retrieve_collection(slug)
         api_endpoint.get("collections/#{slug}")
       end
+
+      def delete_model_version(model, version)
+        api_endpoint.delete("models/#{model}/versions/#{version}")
+      end
     end
   end
 end
